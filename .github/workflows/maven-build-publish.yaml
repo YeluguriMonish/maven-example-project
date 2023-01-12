@@ -31,4 +31,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: monishreg.jfrog.io/test:latest
+          tags: monishreg.jfrog.io/images/test:v1
