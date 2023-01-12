@@ -18,3 +18,16 @@ jobs:
           mvn clean install
           ls
           ls target
+      - name: setup docker buildx
+        uses: docker/setup-buildx-action@v3
+      - name: login to jfrog
+        uses: docker/login@v3
+        with:
+          registry: monishreg.jfrog.io
+          username: admin 
+          password: A^#c%vgTRtjuL9
+      - name: build and push docker image
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: monishreg.jfrog.io/test:latest
